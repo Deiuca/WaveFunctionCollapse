@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4c2wsv7n5e5t"]
+
+[ext_resource type="PackedScene" uid="uid://cxamlxu6ptlwc" path="res://componente.tscn" id="1_ogta5"]
+[ext_resource type="Texture2D" uid="uid://qwxx1aqp1tvt" path="res://Textures/Components/LoToHiPavimento.png" id="2_85tgc"]
+
+[node name="Componente" instance=ExtResource("1_ogta5")]
+texture = ExtResource("2_85tgc")
+bordi = ["", "P", "PA", "M"]

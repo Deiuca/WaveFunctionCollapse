@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4aelup3soqvm"]
+
+[ext_resource type="PackedScene" uid="uid://cxamlxu6ptlwc" path="res://componente.tscn" id="1_onuua"]
+[ext_resource type="Texture2D" uid="uid://i1gonjybjdiq" path="res://Textures/Components/EdgeDx_Soffitto.png" id="2_rnxho"]
+
+[node name="Componente" instance=ExtResource("1_onuua")]
+texture = ExtResource("2_rnxho")
+bordi = ["M", "S", "A", ""]

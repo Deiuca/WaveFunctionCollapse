@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://7sr5c5e3hvgg"]
+
+[ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_s2d3o"]
+[ext_resource type="PackedScene" uid="uid://4a8gcrdvv8uo" path="res://Componenti/componente_edgeSx_soffitto.tscn" id="2_55516"]
+[ext_resource type="PackedScene" uid="uid://wegphxeiwbt2" path="res://Componenti/componente_pavimento_alto.tscn" id="3_qg41s"]
+
+[node name="Room_Alta_Entrace" node_paths=PackedStringArray("soffitto", "pavimento") instance=ExtResource("1_s2d3o")]
+soffitto = NodePath("Componente")
+pavimento = NodePath("Componente2")
+
+[node name="Componente" parent="." index="0" instance=ExtResource("2_55516")]
+position = Vector2(0, -6)
+
+[node name="Componente2" parent="." index="1" instance=ExtResource("3_qg41s")]
+position = Vector2(0, 6)

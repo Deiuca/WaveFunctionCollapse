@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://xw5ur0qv40sa"]
+
+[ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_8llq5"]
+[ext_resource type="PackedScene" uid="uid://b4aelup3soqvm" path="res://Componenti/componente_edgeDx_soffitto.tscn" id="2_vtay7"]
+[ext_resource type="PackedScene" uid="uid://ccylitwrr2or5" path="res://Componenti/componente_pavimento.tscn" id="3_8jr7p"]
+
+[node name="Prefab" node_paths=PackedStringArray("soffitto", "pavimento") instance=ExtResource("1_8llq5")]
+soffitto = NodePath("Componente")
+pavimento = NodePath("Componente2")
+
+[node name="Componente" parent="." index="0" instance=ExtResource("2_vtay7")]
+position = Vector2(0, -6)
+
+[node name="Componente2" parent="." index="1" instance=ExtResource("3_8jr7p")]
+position = Vector2(0, 9)

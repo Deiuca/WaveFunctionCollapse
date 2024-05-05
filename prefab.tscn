@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://chl77nbbcyyb4"]
+
+[ext_resource type="Texture2D" uid="uid://bui2cbhd0vi5l" path="res://Textures/Prefab/prefab_base.png" id="1_0n7k2"]
+[ext_resource type="Script" path="res://Scripts/PreFab/PreFab.gd" id="1_gx54l"]
+
+[node name="Prefab" type="Sprite2D" groups=["PreFab"]]
+texture = ExtResource("1_0n7k2")
+script = ExtResource("1_gx54l")

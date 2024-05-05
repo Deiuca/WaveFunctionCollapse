@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bguxp0ojrxc0l"]
+
+[ext_resource type="PackedScene" uid="uid://b8nbp8cghhmwe" path="res://generatore_livello.tscn" id="1_sds8f"]
+
+[node name="Progetto" type="Node2D"]
+
+[node name="Generatore Livello" parent="." instance=ExtResource("1_sds8f")]
+position = Vector2(10, 10)
+width = 5
+height = 5

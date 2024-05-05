@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://db3iuc4xuwq3p"]
+
+[ext_resource type="PackedScene" uid="uid://cxamlxu6ptlwc" path="res://componente.tscn" id="1_ktxo2"]
+[ext_resource type="Texture2D" uid="uid://cba1wuyhgpum6" path="res://Textures/Components/Pavimento.png" id="2_8k74i"]
+
+[node name="Componente" instance=ExtResource("1_ktxo2")]
+texture = ExtResource("2_8k74i")
+bordi = ["M", "S", "S", ""]

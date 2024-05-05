@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3cmeyukydx0w"]
+
+[ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_qhu23"]
+[ext_resource type="PackedScene" uid="uid://c4c2wsv7n5e5t" path="res://Componenti/componente_LoToHi_pavimento.tscn" id="2_fr3s0"]
+
+[node name="LoToHi_pavimento" node_paths=PackedStringArray("pavimento") instance=ExtResource("1_qhu23")]
+pavimento = NodePath("Componente")
+
+[node name="Componente" parent="." index="0" instance=ExtResource("2_fr3s0")]
+position = Vector2(0, 7)
