@@ -12,4 +12,4 @@ pavimento = NodePath("Componente2")
 position = Vector2(10, 4)
 
 [node name="Componente2" parent="." index="1" instance=ExtResource("3_7yfrt")]
-position = Vector2(10, 18)
+position = Vector2(0, 17)

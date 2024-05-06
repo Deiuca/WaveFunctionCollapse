@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cxamlxu6ptlwc" path="res://componente.tscn" id="1_w24m6"]
 [ext_resource type="Texture2D" uid="uid://cba1wuyhgpum6" path="res://Textures/Components/Pavimento.png" id="2_wei70"]
 
-[node name="Componente" instance=ExtResource("1_w24m6")]
+[node name="Pavimento" instance=ExtResource("1_w24m6")]
 texture = ExtResource("2_wei70")
 centered = false
 bordi = ["", "P", "P", "M"]

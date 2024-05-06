@@ -5,4 +5,4 @@
 
 [node name="Componente" instance=ExtResource("1_ogta5")]
 texture = ExtResource("2_85tgc")
-bordi = ["", "P", "PA", "M"]
+bordi = ["", "P", "PA", ""]

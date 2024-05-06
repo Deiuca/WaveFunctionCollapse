@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
 [ext_resource type="PackedScene" uid="uid://dd5k28g7ir5um" path="res://PreFabbricati/prefab_HiToLo_pavimento.tscn" id="2_4ym07"]
+[ext_resource type="PackedScene" uid="uid://beyml4eop4tsv" path="res://PreFabbricati/aria.tscn" id="2_85f7g"]
 [ext_resource type="PackedScene" uid="uid://b3cmeyukydx0w" path="res://PreFabbricati/prefab_LoToHi_pavimento.tscn" id="3_aswnu"]
 [ext_resource type="PackedScene" uid="uid://dbvlm1lpwqqrm" path="res://PreFabbricati/prefab_pavimento.tscn" id="4_1rx0g"]
 [ext_resource type="PackedScene" uid="uid://bsjkpkwjkjmo5" path="res://PreFabbricati/prefab_pavimento_alto.tscn" id="5_yqlbq"]
 [ext_resource type="PackedScene" uid="uid://dnba4lwdm57b7" path="res://PreFabbricati/prefab_room.tscn" id="6_584et"]
 [ext_resource type="PackedScene" uid="uid://177vvk4l2srr" path="res://PreFabbricati/prefab_room_alta.tscn" id="7_bwj21"]
 [ext_resource type="PackedScene" uid="uid://7sr5c5e3hvgg" path="res://PreFabbricati/prefab_room_alta_entrace_Sx.tscn" id="8_m0idp"]
-[ext_resource type="PackedScene" uid="uid://xw5ur0qv40sa" path="res://PreFabbricati/prefab_room_entrace_Dx.tscn" id="9_14naa"]
 [ext_resource type="PackedScene" uid="uid://c3selnh86cp87" path="res://PreFabbricati/prefab_room_entrace.tscn" id="10_k24av"]
 
 [node name="Generatore Livello" type="Node2D"]
@@ -16,6 +16,9 @@ script = ExtResource("1_mrvbu")
 
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
 visible = false
+
+[node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
+position = Vector2(138.387, 236.505)
 
 [node name="HiToLo_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_4ym07")]
 position = Vector2(138.387, 236.505)
@@ -36,9 +39,6 @@ position = Vector2(138.387, 236.505)
 position = Vector2(138.387, 236.505)
 
 [node name="Room_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("10_k24av")]
-position = Vector2(138.387, 236.505)
-
-[node name="Prefab" parent="Prefab_Utilizzati" instance=ExtResource("9_14naa")]
 position = Vector2(138.387, 236.505)
 
 [node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("4_1rx0g")]

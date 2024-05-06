@@ -81,7 +81,57 @@ func _ready():
 	#Collassa Pavimento
 	for e in range((self.width*self.height)-self.width, (self.width*self.height)):
 		self.celle[e].set_prefab($Prefab_Utilizzati/Pavimento_Alto)
-	
+		
+	print(compara_str_by_caratteri("ACCE", "EACC"))
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var counter = 0
+var iterazioni = 10
 func _process(delta):
-	pass
+	while self.counter < self.iterazioni:
+		for c in self.celle:
+			var pref = seleziona_preFab(c)
+			if pref.size() > 0: 
+				var rand = pref.pick_random()
+				c.set_prefab(rand)
+		self.counter += 1
+
+
+func seleziona_preFab(cella : Cella):
+	var compatibilita = cella.compatibilita()
+	var compatibili = []
+	for pref in self.tipi_celle:
+		var eGiusto = true
+		for i in range(pref.bordi.size()):
+			if compatibilita[i] != "" and pref.bordi[i] != "":
+				eGiusto = eGiusto && (compara_str_by_caratteri(pref.bordi[i], compatibilita[i]))
+		if eGiusto:
+			compatibili.append(pref)
+	return compatibili
+	
+#Funzioni Helpers:
+
+func compara_str_by_caratteri(str1: String, str2: String) -> bool:
+	if str1.length() != str2.length():
+		return false
+	
+	var char_count = {}
+	
+	# Conta i caratteri nella prima stringa
+	for char in str1:
+		if char in char_count:
+			char_count[char] += 1
+		else:
+			char_count[char] = 1
+	
+	# Verifica i caratteri nella seconda stringa
+	for char in str2:
+		if char in char_count:
+			char_count[char] -= 1
+			if char_count[char] < 0:
+				return false
+		else:
+			return false
+				
+	# Se tutti i conteggi sono zero, le stringhe sono composte dagli stessi caratteri
+	return true

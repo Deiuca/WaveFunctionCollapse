@@ -5,7 +5,7 @@
 
 [node name="Pavimento_alto" instance=ExtResource("1_jjfw3")]
 texture = ExtResource("2_woqwu")
-bordi = ["", "PA", "PA", "M"]
+bordi = ["", "PA", "PA", ""]
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(0, 3)
