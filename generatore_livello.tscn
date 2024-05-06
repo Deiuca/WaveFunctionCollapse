@@ -17,20 +17,29 @@ script = ExtResource("1_mrvbu")
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
 visible = false
 
-[node name="Room_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("10_k24av")]
-
 [node name="HiToLo_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_4ym07")]
+position = Vector2(138.387, 236.505)
 
 [node name="LoToHi_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("3_aswnu")]
-
-[node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("4_1rx0g")]
+position = Vector2(138.387, 236.505)
 
 [node name="Pavimento_Alto" parent="Prefab_Utilizzati" instance=ExtResource("5_yqlbq")]
+position = Vector2(138.387, 236.505)
 
 [node name="Room" parent="Prefab_Utilizzati" instance=ExtResource("6_584et")]
+position = Vector2(138.387, 236.505)
 
 [node name="Room_Alta" parent="Prefab_Utilizzati" instance=ExtResource("7_bwj21")]
+position = Vector2(138.387, 236.505)
 
 [node name="Room_Alta_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("8_m0idp")]
+position = Vector2(138.387, 236.505)
+
+[node name="Room_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("10_k24av")]
+position = Vector2(138.387, 236.505)
 
 [node name="Prefab" parent="Prefab_Utilizzati" instance=ExtResource("9_14naa")]
+position = Vector2(138.387, 236.505)
+
+[node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("4_1rx0g")]
+position = Vector2(138.387, 236.505)

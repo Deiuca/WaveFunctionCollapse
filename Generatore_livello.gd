@@ -25,6 +25,8 @@ func _ready():
 	
 	#Recupera PreFab
 	tipi_celle = $Prefab_Utilizzati.get_children()
+	
+	#Crea Prefab inversi
 	$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Room_Entrace.ritorna_inverso_flip_h("_Dx"))
 	$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Room_Alta_Entrace.ritorna_inverso_flip_h("_Dx"))
 	
@@ -34,8 +36,8 @@ func _ready():
 	var cell_scale = Vector2((windows_size.x/dim_txture.x)/self.width, (windows_size.y/dim_txture.y)/self.height)
 	
 	#Popolo array Celle e set posizioni
-	for ih in self.height:
-		for iw in self.width:
+	for ih in range(self.height):
+		for iw in range(self.width):
 			var istanza = Cella.new()
 			istanza.position = Vector2(iw*dim_txture.x*cell_scale.x, ih*dim_txture.y*cell_scale.y)
 			istanza.scale = cell_scale
@@ -71,8 +73,11 @@ func _ready():
 		if (indx+(self.width)) < self.celle.size() and (indx+(self.width))/self.width == (indx+(self.width+1))/self.width:
 			cella.vicini[7] = self.celle[indx+(self.width+1)]
 	
-	#TODO : Collassa at random 
-	
+	#Collassa at random in pavimento
+	for i in range(0, 8):
+		var randIndx = randomGenerator.randi_range(self.width, (self.width*self.height)-self.width)
+		self.celle[randIndx].set_prefab($Prefab_Utilizzati/Pavimento)
+		
 	#Collassa Pavimento
 	for e in range((self.width*self.height)-self.width, (self.width*self.height)):
 		self.celle[e].set_prefab($Prefab_Utilizzati/Pavimento_Alto)

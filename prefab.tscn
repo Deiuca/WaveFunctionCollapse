@@ -5,4 +5,5 @@
 
 [node name="Prefab" type="Sprite2D" groups=["PreFab"]]
 texture = ExtResource("1_0n7k2")
+centered = false
 script = ExtResource("1_gx54l")

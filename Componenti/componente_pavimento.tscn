@@ -5,4 +5,5 @@
 
 [node name="Componente" instance=ExtResource("1_w24m6")]
 texture = ExtResource("2_wei70")
+centered = false
 bordi = ["", "P", "P", "M"]

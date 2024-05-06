@@ -18,4 +18,6 @@ func _process(delta):
 func set_prefab(prefab : PreFab):
 	get_child(0).queue_free()
 	self.preFab = prefab.duplicate()
+	self.preFab.centered = false
+	self.preFab.position = Vector2(0,0)
 	add_child(self.preFab)
