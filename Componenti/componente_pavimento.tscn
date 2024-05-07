@@ -6,4 +6,4 @@
 [node name="Pavimento" instance=ExtResource("1_w24m6")]
 texture = ExtResource("2_wei70")
 centered = false
-bordi = ["", "P", "P", "M"]
+bordi = ["", "P", "P", ""]

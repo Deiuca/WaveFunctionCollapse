@@ -86,7 +86,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var counter = 0
-var iterazioni = 10
+var iterazioni = 1
 func _process(delta):
 	while self.counter < self.iterazioni:
 		for c in self.celle:

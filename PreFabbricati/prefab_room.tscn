@@ -9,9 +9,8 @@ soffitto = NodePath("Componente")
 pavimento = NodePath("Componente2")
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_i7nv2")]
-position = Vector2(10, 2)
-bordi = ["", "S", "S", ""]
+position = Vector2(10, 2.5)
+scale = Vector2(1, 1.66667)
 
 [node name="Componente2" parent="." index="1" instance=ExtResource("3_0w515")]
 position = Vector2(0, 17)
-bordi = ["", "P", "P", ""]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bguxp0ojrxc0l"]
+[gd_scene load_steps=3 format=3 uid="uid://bguxp0ojrxc0l"]
 
 [ext_resource type="PackedScene" uid="uid://b8nbp8cghhmwe" path="res://generatore_livello.tscn" id="1_sds8f"]
+[ext_resource type="Script" path="res://progetto.gd" id="1_spvim"]
 
 [node name="Progetto" type="Node2D"]
+script = ExtResource("1_spvim")
 
 [node name="Generatore Livello" parent="." instance=ExtResource("1_sds8f")]
 position = Vector2(2.08165e-12, 2.08165e-12)

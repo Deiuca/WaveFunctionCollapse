@@ -17,12 +17,13 @@ func _process(delta):
 	pass
 
 func aggiorna_bordi():
-	if self.soffitto != null:
-		self.bordi = somma_bordi(self.bordi, self.soffitto.bordi)
-	if self.pavimento != null:
-		self.bordi = somma_bordi(self.bordi, self.pavimento.bordi)
-	for componente in self.componenti:
-		self.bordi = somma_bordi(self.bordi, self.componente.bordi)
+	if self.bordi == ["","","",""]:
+		if self.soffitto != null:
+			self.bordi = somma_bordi(self.bordi, self.soffitto.bordi)
+		if self.pavimento != null:
+			self.bordi = somma_bordi(self.bordi, self.pavimento.bordi)
+		for componente in self.componenti:
+			self.bordi = somma_bordi(self.bordi, self.componente.bordi)
 
 func somma_bordi(bordi: Array, bordi2: Array) -> Array:
 	var result = []
@@ -36,6 +37,6 @@ func somma_bordi(bordi: Array, bordi2: Array) -> Array:
 func ritorna_inverso_flip_h(nameAdd = "_Flip") ->PreFab:
 	var copia = duplicate()
 	copia.flip_v = true
-	copia.bordi = [copia.bordi[0],copia.bordi[2],copia.bordi[1],copia.bordi[3]]
+	copia.bordi = [self.bordi[0],self.bordi[2],self.bordi[1],self.bordi[3]]
 	copia.name = copia.name + nameAdd
 	return copia
