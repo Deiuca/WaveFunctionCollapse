@@ -5,6 +5,7 @@
 
 [node name="Pavimento" node_paths=PackedStringArray("pavimento") instance=ExtResource("1_uth5f")]
 pavimento = NodePath("Componente")
+priorita = 3
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_hm41a")]
 position = Vector2(0, 17)

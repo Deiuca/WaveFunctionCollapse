@@ -24,11 +24,14 @@ func _ready():
 	print(generator_seed)
 	
 	#Recupera PreFab
-	tipi_celle = $Prefab_Utilizzati.get_children()
+	self.tipi_celle = $Prefab_Utilizzati.get_children()
 	
 	#Crea Prefab inversi
 	$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Room_Entrace.ritorna_inverso_flip_h("_Dx"))
 	$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Room_Alta_Entrace.ritorna_inverso_flip_h("_Dx"))
+	
+	#Aggiorno tipi_celle
+	self.tipi_celle = $Prefab_Utilizzati.get_children()
 	
 	#Determina la scala delle Celle in base alla dimensione delle texture
 	
@@ -78,37 +81,73 @@ func _ready():
 		var randIndx = randomGenerator.randi_range(self.width, (self.width*self.height)-self.width)
 		self.celle[randIndx].set_prefab($Prefab_Utilizzati/Pavimento)
 		
+	for i in range(self.height-1):
+		var randIndx = randomGenerator.randi_range(0,self.width-1)
+		self.celle[((i*self.height)+randIndx)].set_prefab($Prefab_Utilizzati/Aria_pavimento, true)
+	
 	#Collassa Pavimento
 	for e in range((self.width*self.height)-self.width, (self.width*self.height)):
-		self.celle[e].set_prefab($Prefab_Utilizzati/Pavimento_Alto)
-		
-	print(compara_str_by_caratteri("ACCE", "EACC"))
+		self.celle[e].set_prefab($Prefab_Utilizzati/Pavimento_Alto, true)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var counter = 0
 var iterazioni = 1
 func _process(delta):
-	while self.counter < self.iterazioni:
+	if self.counter < self.iterazioni:
 		for c in self.celle:
+			if c.name == "@Node2D@11":
+				pass
 			var pref = seleziona_preFab(c)
 			if pref.size() > 0: 
-				var rand = pref.pick_random()
+				var rand = pref[self.randomGenerator.randi_range(0, pref.size()-1)]
 				c.set_prefab(rand)
 		self.counter += 1
 
-
+#TODOFIX
 func seleziona_preFab(cella : Cella):
-	var compatibilita = cella.compatibilita()
-	var compatibili = []
-	for pref in self.tipi_celle:
-		var eGiusto = true
-		for i in range(pref.bordi.size()):
-			if compatibilita[i] != "" and pref.bordi[i] != "":
-				eGiusto = eGiusto && (compara_str_by_caratteri(pref.bordi[i], compatibilita[i]))
-		if eGiusto:
-			compatibili.append(pref)
-	return compatibili
+	if not cella.fisso:
+		var compatibilita = cella.compatibilita()
+		var compatibili = []
+		for pref in self.tipi_celle:
+			var eGiusto = true
+			var test = pref.bordi.duplicate() #TODO rimuovi
+			for i in range(pref.bordi.size()):
+				if compatibilita[i] != "" and pref.bordi[i] != "":
+					eGiusto = eGiusto && (compara_str_by_caratteri(pref.bordi[i], compatibilita[i]))
+					if !eGiusto:
+						break
+			if eGiusto:
+				compatibili.append(pref)
+		return compatibili
+	return [cella.preFab]
 	
+
+func random_prefab_on_priorita(array : Array):
+	# Verifichiamo se l'array è vuoto
+	if array.size() == 0:
+		return null
+	
+	# Creiamo un array per le probabilità cumulate
+	var probabilita_comulata = []
+	var priorita_totale = 0.0
+	
+	# Calcoliamo la somma totale delle priorità
+	for pref in array:
+		priorita_totale += pref.priorita
+		probabilita_comulata.append(priorita_totale)
+	
+	# Generiamo un numero casuale tra 0 e la somma totale delle priorità
+	var random_number = randf() * priorita_totale
+	
+	# Selezioniamo l'oggetto basato sul numero casuale
+	for i in range(probabilita_comulata.size()):
+		if random_number < probabilita_comulata[i]:
+			return array[i]
+	
+	# Se non abbiamo trovato un oggetto, restituiamo l'ultimo
+	return array[-1]
+
 #Funzioni Helpers:
 
 func compara_str_by_caratteri(str1: String, str2: String) -> bool:
@@ -135,3 +174,4 @@ func compara_str_by_caratteri(str1: String, str2: String) -> bool:
 				
 	# Se tutti i conteggi sono zero, le stringhe sono composte dagli stessi caratteri
 	return true
+	

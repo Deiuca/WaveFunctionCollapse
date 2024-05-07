@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8nbp8cghhmwe"]
+[gd_scene load_steps=11 format=3 uid="uid://b8nbp8cghhmwe"]
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
 [ext_resource type="PackedScene" uid="uid://dd5k28g7ir5um" path="res://PreFabbricati/prefab_HiToLo_pavimento.tscn" id="2_4ym07"]
 [ext_resource type="PackedScene" uid="uid://beyml4eop4tsv" path="res://PreFabbricati/aria.tscn" id="2_85f7g"]
-[ext_resource type="Texture2D" uid="uid://bui2cbhd0vi5l" path="res://Textures/Prefab/prefab_base.png" id="3_76108"]
 [ext_resource type="PackedScene" uid="uid://b3cmeyukydx0w" path="res://PreFabbricati/prefab_LoToHi_pavimento.tscn" id="3_aswnu"]
 [ext_resource type="PackedScene" uid="uid://dbvlm1lpwqqrm" path="res://PreFabbricati/prefab_pavimento.tscn" id="4_1rx0g"]
 [ext_resource type="PackedScene" uid="uid://bsjkpkwjkjmo5" path="res://PreFabbricati/prefab_pavimento_alto.tscn" id="5_yqlbq"]
@@ -18,43 +17,24 @@ script = ExtResource("1_mrvbu")
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
 visible = false
 
-[node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
-position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
-
 [node name="Aria2" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
 position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
 bordi = ["O", "A", "A", "O"]
 
+[node name="Aria_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
+
 [node name="HiToLo_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_4ym07")]
-position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
 
 [node name="LoToHi_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("3_aswnu")]
-position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
-
-[node name="Pavimento_Alto" parent="Prefab_Utilizzati" instance=ExtResource("5_yqlbq")]
-position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
-
-[node name="Room" parent="Prefab_Utilizzati" instance=ExtResource("6_584et")]
-position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
-
-[node name="Room_Alta" parent="Prefab_Utilizzati" instance=ExtResource("7_bwj21")]
-position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
-
-[node name="Room_Alta_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("8_m0idp")]
-position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
-
-[node name="Room_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("10_k24av")]
-position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
 
 [node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("4_1rx0g")]
-position = Vector2(138.387, 236.505)
-texture = ExtResource("3_76108")
+
+[node name="Pavimento_Alto" parent="Prefab_Utilizzati" instance=ExtResource("5_yqlbq")]
+
+[node name="Room" parent="Prefab_Utilizzati" instance=ExtResource("6_584et")]
+
+[node name="Room_Alta" parent="Prefab_Utilizzati" instance=ExtResource("7_bwj21")]
+
+[node name="Room_Alta_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("8_m0idp")]
+
+[node name="Room_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("10_k24av")]

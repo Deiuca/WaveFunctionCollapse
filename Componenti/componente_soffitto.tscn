@@ -5,4 +5,4 @@
 
 [node name="Soffitto" instance=ExtResource("1_ktxo2")]
 texture = ExtResource("2_4j2wj")
-bordi = ["", "S", "S", ""]
+bordi = ["M", "S", "S", ""]

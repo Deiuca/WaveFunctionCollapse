@@ -4,6 +4,7 @@ class_name PreFab
 @export var soffitto : Componente
 @export var componenti : Array[Componente]
 @export var pavimento : Componente 
+@export var priorita = 0
 
 #Su, Sx, Dx, Giu
 @export var bordi = [ "", "", "", "" ]
@@ -35,8 +36,10 @@ func somma_bordi(bordi: Array, bordi2: Array) -> Array:
 	return result
 
 func ritorna_inverso_flip_h(nameAdd = "_Flip") ->PreFab:
-	var copia = duplicate()
-	copia.flip_v = true
+	var copia = self.duplicate()
+	copia.flip_h = true
+	for c in copia.get_children():
+		c.flip_h = true
 	copia.bordi = [self.bordi[0],self.bordi[2],self.bordi[1],self.bordi[3]]
 	copia.name = copia.name + nameAdd
 	return copia
