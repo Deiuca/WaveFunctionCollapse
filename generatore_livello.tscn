@@ -20,10 +20,6 @@ script = ExtResource("1_mrvbu")
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
 visible = false
 
-[node name="Aria2" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
-position = Vector2(138.387, 236.505)
-bordi = ["O", "A", "A", "O"]
-
 [node name="Aria_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
 
 [node name="HiToLo_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_4ym07")]
@@ -49,3 +45,6 @@ position = Vector2(11.3928, 13.2712)
 position = Vector2(11.3928, 13.2712)
 
 [node name="Room_Nemico" parent="Prefab_Utilizzati" instance=ExtResource("13_f6ta3")]
+
+[node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
+bordi = ["O", "A", "A", "O"]

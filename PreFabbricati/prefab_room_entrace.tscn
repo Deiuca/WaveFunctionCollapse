@@ -12,7 +12,6 @@ priorita = 1
 [node name="Componente" parent="." index="0" instance=ExtResource("2_jikcb")]
 position = Vector2(10, 4.5)
 scale = Vector2(1, 1.125)
-bordi = ["", "", "S", ""]
 
 [node name="Componente2" parent="." index="1" instance=ExtResource("3_7yfrt")]
 position = Vector2(0, 17)

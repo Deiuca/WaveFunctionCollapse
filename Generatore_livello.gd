@@ -80,14 +80,15 @@ func _ready():
 	for i in range(0, 8):
 		var randIndx = randomGenerator.randi_range(self.width, (self.width*self.height)-self.width)
 		self.celle[randIndx].set_prefab($Prefab_Utilizzati/Pavimento)
-		
+	
+	#Collassa aria per garantire percorso
 	for i in range(self.height-1):
 		var randIndx = (i*self.width)+randomGenerator.randi_range(0,self.width-1)
 		print(randIndx)
-		if randi() % 2 == 0:
-			self.celle[randIndx].set_prefab($Prefab_Utilizzati/Aria_pavimento, true)
-		else:
-			self.celle[randIndx].set_prefab($Prefab_Utilizzati/Aria2, true)
+		self.celle[randIndx].set_prefab($Prefab_Utilizzati/Aria_pavimento, true)
+		randIndx = (i*self.width)+randomGenerator.randi_range(0,self.width-1)
+		self.celle[randIndx].set_prefab($Prefab_Utilizzati/Aria_pavimento, true)
+		print(randIndx)
 	
 	#Collassa Pavimento
 	for e in range((self.width*self.height)-self.width, (self.width*self.height)):
@@ -108,6 +109,8 @@ func _process(delta):
 func seleziona_preFab(cella : Cella):
 	if not cella.fisso:
 		var compatibilita = cella.compatibilita()
+		if cella.name == "@Node2D@5":
+			pass
 		var compatibili = []
 		for pref in self.tipi_celle:
 			var eGiusto = true

@@ -36,7 +36,7 @@ func compatibilita()-> Array:
 	var sopra = self.vicini[1].get_bordi()[3] if self.vicini[1] != null else ""
 	result.append(sopra)
 	#Sx
-	var sx = self.vicini[3].get_bordi()[2] if self.vicini[3] != null else ""
+	var sx = self.vicini[3].get_bordi()[2] if self.vicini[3] != null else ("P" if randi() % 2 == 0 else "A")
 	result.append(sx)
 	#Dx
 	var dx = self.vicini[4].get_bordi()[1] if self.vicini[4] != null else ""

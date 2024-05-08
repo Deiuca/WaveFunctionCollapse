@@ -5,4 +5,4 @@
 
 [node name="HiToLo" instance=ExtResource("1_5ewoi")]
 texture = ExtResource("2_yx8e8")
-bordi = ["", "A", "P", ""]
+bordi = ["", "A", "P", "M"]

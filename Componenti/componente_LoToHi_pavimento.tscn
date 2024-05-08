@@ -5,4 +5,4 @@
 
 [node name="LoToHi" instance=ExtResource("1_ogta5")]
 texture = ExtResource("2_85tgc")
-bordi = ["", "P", "A", ""]
+bordi = ["", "P", "A", "M"]
