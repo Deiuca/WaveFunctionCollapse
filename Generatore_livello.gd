@@ -10,7 +10,7 @@ var tipi_celle : Array[Node] = []
 
 @export var dim_txture : Vector2 = Vector2(20,20)
 
-var randomGenerator : RandomNumberGenerator = RandomNumberGenerator.new()
+var randomGenerator : PerlinRandom = Init.perlinRandom
 
 var celle = []
 
@@ -18,7 +18,7 @@ var celle = []
 func _ready():
 	
 	#Determina il seed del Generatore di mondo
-	self.randomGenerator.set_seed(self.generator_seed)
+	self.randomGenerator.randomSeed = self.generator_seed
 	
 	#DEBUG
 	print("Random Seed: " + str(generator_seed))
@@ -29,6 +29,8 @@ func _ready():
 	#Crea Prefab inversi
 	$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Room_Entrace.ritorna_inverso_flip_h("_Dx"))
 	$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Room_Alta_Entrace.ritorna_inverso_flip_h("_Dx"))
+	$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Aria.ritorna_inverso_flip_h("_Alta").ritorna_inverso_flip_v())
+	$Prefab_Utilizzati/Aria.free()
 	
 	#Aggiorno tipi_celle
 	self.tipi_celle = $Prefab_Utilizzati.get_children()
@@ -96,7 +98,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var counter = 0
-var iterazioni = 2
+var iterazioni = 1
 func _process(delta):
 	if self.counter < self.iterazioni:
 		for c in self.celle:
@@ -109,8 +111,6 @@ func _process(delta):
 func seleziona_preFab(cella : Cella):
 	if not cella.fisso:
 		var compatibilita = cella.compatibilita()
-		if cella.name == "@Node2D@5":
-			pass
 		var compatibili = []
 		for pref in self.tipi_celle:
 			var eGiusto = true
@@ -140,7 +140,7 @@ func random_prefab_on_priorita(array : Array):
 		probabilita_comulata.append(priorita_totale)
 	
 	# Generiamo un numero casuale tra 0 e la somma totale delle priorità
-	var random_number = randf() * priorita_totale
+	var random_number = self.randomGenerator.randf() * priorita_totale
 	
 	# Selezioniamo l'oggetto basato sul numero casuale
 	for i in range(probabilita_comulata.size()):

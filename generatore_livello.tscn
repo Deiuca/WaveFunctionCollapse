@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8nbp8cghhmwe"]
+[gd_scene load_steps=17 format=3 uid="uid://b8nbp8cghhmwe"]
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
 [ext_resource type="PackedScene" uid="uid://dd5k28g7ir5um" path="res://PreFabbricati/prefab_HiToLo_pavimento.tscn" id="2_4ym07"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://cf3rox15w5n6m" path="res://PreFabbricati/pavimento_alto_ostacolo.tscn" id="11_e18ia"]
 [ext_resource type="PackedScene" uid="uid://cyiw0y2r1xbqd" path="res://PreFabbricati/pavimento_ostacolo.tscn" id="12_xe1qp"]
 [ext_resource type="PackedScene" uid="uid://clhe8e8ffqk2" path="res://PreFabbricati/room_nemico.tscn" id="13_f6ta3"]
+[ext_resource type="PackedScene" uid="uid://cpfiucfjmeobd" path="res://PreFabbricati/pavimento_alto_compatibile_room_alta.tscn" id="14_57a6t"]
+[ext_resource type="PackedScene" uid="uid://b0lf6xpy0y8ly" path="res://PreFabbricati/pavimento_compatibile_room.tscn" id="15_xv50a"]
+[ext_resource type="PackedScene" uid="uid://cdf2fexl37vhs" path="res://PreFabbricati/uscita_room_alta_to_pavimento.tscn" id="16_2eccy"]
 
 [node name="Generatore Livello" type="Node2D"]
 script = ExtResource("1_mrvbu")
@@ -20,7 +23,12 @@ script = ExtResource("1_mrvbu")
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
 visible = false
 
+[node name="Pavimento_Alto_Compatibile_Room_Alta" parent="Prefab_Utilizzati" instance=ExtResource("14_57a6t")]
+
+[node name="Pavimento_Compatibile_Room" parent="Prefab_Utilizzati" instance=ExtResource("15_xv50a")]
+
 [node name="Aria_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
+bordi = ["", "P", "P", "O"]
 
 [node name="HiToLo_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_4ym07")]
 
@@ -47,4 +55,6 @@ position = Vector2(11.3928, 13.2712)
 [node name="Room_Nemico" parent="Prefab_Utilizzati" instance=ExtResource("13_f6ta3")]
 
 [node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
-bordi = ["O", "A", "A", "O"]
+bordi = ["", "A", "A", "O"]
+
+[node name="Uscita_Room_Alta_To_povimento" parent="Prefab_Utilizzati" instance=ExtResource("16_2eccy")]
