@@ -21,7 +21,7 @@ func _ready():
 	self.randomGenerator.set_seed(self.generator_seed)
 	
 	#DEBUG
-	print(generator_seed)
+	print("Random Seed: " + str(generator_seed))
 	
 	#Recupera PreFab
 	self.tipi_celle = $Prefab_Utilizzati.get_children()
@@ -82,36 +82,35 @@ func _ready():
 		self.celle[randIndx].set_prefab($Prefab_Utilizzati/Pavimento)
 		
 	for i in range(self.height-1):
-		var randIndx = randomGenerator.randi_range(0,self.width-1)
-		self.celle[((i*self.height)+randIndx)].set_prefab($Prefab_Utilizzati/Aria_pavimento, true)
+		var randIndx = (i*self.width)+randomGenerator.randi_range(0,self.width-1)
+		print(randIndx)
+		if randi() % 2 == 0:
+			self.celle[randIndx].set_prefab($Prefab_Utilizzati/Aria_pavimento, true)
+		else:
+			self.celle[randIndx].set_prefab($Prefab_Utilizzati/Aria2, true)
 	
 	#Collassa Pavimento
 	for e in range((self.width*self.height)-self.width, (self.width*self.height)):
 		self.celle[e].set_prefab($Prefab_Utilizzati/Pavimento_Alto, true)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var counter = 0
-var iterazioni = 1
+var iterazioni = 2
 func _process(delta):
 	if self.counter < self.iterazioni:
 		for c in self.celle:
-			if c.name == "@Node2D@11":
-				pass
 			var pref = seleziona_preFab(c)
 			if pref.size() > 0: 
 				var rand = pref[self.randomGenerator.randi_range(0, pref.size()-1)]
 				c.set_prefab(rand)
 		self.counter += 1
 
-#TODOFIX
 func seleziona_preFab(cella : Cella):
 	if not cella.fisso:
 		var compatibilita = cella.compatibilita()
 		var compatibili = []
 		for pref in self.tipi_celle:
 			var eGiusto = true
-			var test = pref.bordi.duplicate() #TODO rimuovi
 			for i in range(pref.bordi.size()):
 				if compatibilita[i] != "" and pref.bordi[i] != "":
 					eGiusto = eGiusto && (compara_str_by_caratteri(pref.bordi[i], compatibilita[i]))

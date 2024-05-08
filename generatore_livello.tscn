@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8nbp8cghhmwe"]
+[gd_scene load_steps=14 format=3 uid="uid://b8nbp8cghhmwe"]
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
 [ext_resource type="PackedScene" uid="uid://dd5k28g7ir5um" path="res://PreFabbricati/prefab_HiToLo_pavimento.tscn" id="2_4ym07"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://177vvk4l2srr" path="res://PreFabbricati/prefab_room_alta.tscn" id="7_bwj21"]
 [ext_resource type="PackedScene" uid="uid://7sr5c5e3hvgg" path="res://PreFabbricati/prefab_room_alta_entrace_Sx.tscn" id="8_m0idp"]
 [ext_resource type="PackedScene" uid="uid://c3selnh86cp87" path="res://PreFabbricati/prefab_room_entrace.tscn" id="10_k24av"]
+[ext_resource type="PackedScene" uid="uid://cf3rox15w5n6m" path="res://PreFabbricati/pavimento_alto_ostacolo.tscn" id="11_e18ia"]
+[ext_resource type="PackedScene" uid="uid://cyiw0y2r1xbqd" path="res://PreFabbricati/pavimento_ostacolo.tscn" id="12_xe1qp"]
+[ext_resource type="PackedScene" uid="uid://clhe8e8ffqk2" path="res://PreFabbricati/room_nemico.tscn" id="13_f6ta3"]
 
 [node name="Generatore Livello" type="Node2D"]
 script = ExtResource("1_mrvbu")
@@ -38,3 +41,11 @@ bordi = ["O", "A", "A", "O"]
 [node name="Room_Alta_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("8_m0idp")]
 
 [node name="Room_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("10_k24av")]
+
+[node name="Pavimento_Alto_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("11_e18ia")]
+position = Vector2(11.3928, 13.2712)
+
+[node name="Pavimento_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("12_xe1qp")]
+position = Vector2(11.3928, 13.2712)
+
+[node name="Room_Nemico" parent="Prefab_Utilizzati" instance=ExtResource("13_f6ta3")]

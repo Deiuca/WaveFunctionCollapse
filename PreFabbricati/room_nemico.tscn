@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://clhe8e8ffqk2"]
+
+[ext_resource type="PackedScene" uid="uid://dnba4lwdm57b7" path="res://PreFabbricati/prefab_room.tscn" id="1_61d3t"]
+[ext_resource type="Texture2D" uid="uid://m4go4dtt23v3" path="res://Textures/Nemico.png" id="2_yb0b1"]
+
+[node name="Room_Nemico" instance=ExtResource("1_61d3t")]
+
+[node name="Componente" parent="." index="0"]
+position = Vector2(10, 2)
+scale = Vector2(1, 1.33333)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+position = Vector2(10, 11)
+texture = ExtResource("2_yb0b1")

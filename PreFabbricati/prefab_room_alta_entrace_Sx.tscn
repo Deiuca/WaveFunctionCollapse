@@ -13,5 +13,5 @@ position = Vector2(10, 4)
 bordi = ["", "", "S", ""]
 
 [node name="Componente2" parent="." index="1" instance=ExtResource("3_qg41s")]
-position = Vector2(10, 15.25)
-scale = Vector2(1, 1.16667)
+position = Vector2(10, 16)
+scale = Vector2(1, 1)
