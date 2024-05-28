@@ -4,9 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://db3iuc4xuwq3p" path="res://Componenti/componente_soffitto.tscn" id="2_i7nv2"]
 [ext_resource type="PackedScene" uid="uid://ccylitwrr2or5" path="res://Componenti/componente_pavimento.tscn" id="3_0w515"]
 
-[node name="Room" node_paths=PackedStringArray("soffitto", "pavimento") instance=ExtResource("1_nn0ly")]
-soffitto = NodePath("Componente")
-pavimento = NodePath("Componente2")
+[node name="Room" instance=ExtResource("1_nn0ly")]
+bordi = ["O", "S", "S", ""]
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_i7nv2")]
 position = Vector2(10, 2.5)

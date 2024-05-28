@@ -1,6 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxamlxu6ptlwc"]
-
-[ext_resource type="Script" path="res://Scripts/PreFab/Componente.gd" id="1_d35nm"]
+[gd_scene format=3 uid="uid://cxamlxu6ptlwc"]
 
 [node name="Componente" type="Sprite2D" groups=["Componente"]]
-script = ExtResource("1_d35nm")

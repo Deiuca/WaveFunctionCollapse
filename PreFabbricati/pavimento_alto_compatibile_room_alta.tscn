@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b4aelup3soqvm" path="res://Componenti/componente_edgeDx_soffitto.tscn" id="2_hlnxr"]
 
 [node name="Pavimento_Alto_Compatibile_Room_Alta" instance=ExtResource("1_3am8k")]
-bordi = ["O", "SA", "A", "M"]
+bordi = ["O", "SA", "A", ""]
 
 [node name="Componente2" parent="." index="1" instance=ExtResource("2_hlnxr")]
 position = Vector2(0, 3)

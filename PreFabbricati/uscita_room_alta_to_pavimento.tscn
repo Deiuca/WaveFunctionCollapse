@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bsws0nb44kdxr" path="res://Componenti/componente_HiToLo_pavimento.tscn" id="3_cjvl5"]
 
 [node name="Uscita_Room_Alta_To_povimento" instance=ExtResource("1_berk6")]
-bordi = ["", "SA", "P", "M"]
+bordi = ["O", "SA", "P", "M"]
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_edetu")]
 position = Vector2(10, 4)

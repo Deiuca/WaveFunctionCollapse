@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_hgh7q"]
 [ext_resource type="PackedScene" uid="uid://wegphxeiwbt2" path="res://Componenti/componente_pavimento_alto.tscn" id="2_khr35"]
 
-[node name="Pavimento_Alto" node_paths=PackedStringArray("pavimento") instance=ExtResource("1_hgh7q")]
-pavimento = NodePath("Componente")
+[node name="Pavimento_Alto" instance=ExtResource("1_hgh7q")]
+bordi = ["", "SA", "SA", ""]
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_khr35")]
 position = Vector2(10, 16)

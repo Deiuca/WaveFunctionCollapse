@@ -1,8 +1,6 @@
 extends Sprite2D
 class_name Componente
 
-#Su, Sx, Dx, Giu
-@export var bordi = ["","","",""]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
