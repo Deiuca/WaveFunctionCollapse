@@ -26,8 +26,12 @@ func _ready():
 	#Crea Prefab inversi
 	$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Soffitto_Entrata.ritorna_inverso_flip_h("_Dx"))
 	
-	#Determina la scala delle Celle in base alla dimensione delle texture
+	#Duplica i prefab in base al loro peso
+	for pref in $Prefab_Utilizzati.get_children():
+		for i in range(pref.peso-1):
+			$Prefab_Utilizzati.add_child(pref.duplicate())
 	
+	#Determina la scala delle Celle in base alla dimensione delle texture
 	var windows_size = get_viewport().size
 	var cell_scale = Vector2((windows_size.x/dim_txture.x)/self.width, (windows_size.y/dim_txture.y)/self.height)
 	
@@ -75,6 +79,10 @@ func _process(delta):
 	var cella_da_collassare = self.celle[0]
 	while cella_da_collassare != null:
 		var compatibili = ritorna_compatibili(cella_da_collassare)
+		#if not compatibili.is_empty():
+			#var test = randomGenerator.randi_range(0, compatibili.size()-1)
+			#cella_da_collassare.set_prefab(compatibili[test])
+		#cella_da_collassare = trova_cella_meno_entropia()
 		var test = randomGenerator.randi_range(0, compatibili.size()-1)
 		cella_da_collassare.set_prefab(compatibili[test])
 		cella_da_collassare = trova_cella_meno_entropia()

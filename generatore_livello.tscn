@@ -11,8 +11,8 @@
 
 [node name="Generatore Livello" type="Node2D"]
 script = ExtResource("1_mrvbu")
-width = 10
-height = 10
+width = 20
+height = 20
 generator_seed = 18
 
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
@@ -20,25 +20,34 @@ visible = false
 
 [node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
 position = Vector2(538, 631)
-bordi = ["", "P", "P", ""]
+bordi = ["OS", "P", "P", "P"]
 
 [node name="Pavimento Nemico" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
 position = Vector2(538, 631)
-bordi = ["", "P", "P", ""]
+bordi = ["OS", "P", "P", "P"]
 
 [node name="Pavimento_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("12_xe1qp")]
 position = Vector2(538, 631)
-bordi = ["", "P", "P", ""]
+bordi = ["OS", "P", "P", "P"]
 
 [node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
 position = Vector2(538, 631)
-bordi = ["O", "PE", "PE", "O"]
+bordi = ["OP", "P", "PE", "O"]
+peso = 3
 
 [node name="Soffitto" parent="Prefab_Utilizzati" instance=ExtResource("7_ss4qb")]
 position = Vector2(538, 631)
+bordi = ["O", "S", "S", "S"]
+peso = 2
 
 [node name="Soffitto_Entrata" parent="Prefab_Utilizzati" instance=ExtResource("8_n5ruu")]
 position = Vector2(538, 631)
+bordi = ["O", "E", "S", "S"]
 
 [node name="Soffitto_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("9_31b2x")]
 position = Vector2(538, 631)
+bordi = ["O", "S", "S", "S"]
+
+[node name="Aria2" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
+position = Vector2(538, 631)
+bordi = ["OP", "PE", "P", "O"]
