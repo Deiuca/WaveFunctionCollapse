@@ -1,7 +1,7 @@
 extends Node
 class_name PerlinRandom
 
-@export var randomSeed = RandomNumberGenerator.new().randi()
+@export var randomSeed = randi() % 3000
 
 func randi():
 	var valore = sin(2+randomSeed)+sin(PI*randomSeed)
@@ -16,14 +16,14 @@ func randf():
 	return float(valore)
 
 func randi_range(b = 0, t = b+1):
-	var valore = randi()
+	var valore = self.randi()
 	if t == 0:
 		return 0
 	valore = (valore % t)+b
 	return int(valore)
 
 func randf_range(b = 0, t = b+1):
-	var valore = randi()
+	var valore = self.randf()
 	if t == 0:
 		return 0
 	valore = (valore % t)+b

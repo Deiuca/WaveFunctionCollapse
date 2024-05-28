@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://5f064tujluwb"]
+
+[ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_kv6v1"]
+[ext_resource type="Texture2D" uid="uid://cba1wuyhgpum6" path="res://Textures/Components/Pavimento.png" id="2_ixuyn"]
+[ext_resource type="Texture2D" uid="uid://m4go4dtt23v3" path="res://Textures/Nemico.png" id="3_cm4qh"]
+
+[node name="Pavimento Nemico" instance=ExtResource("1_kv6v1")]
+bordi = ["", "P", "P", "M"]
+
+[node name="Pavimento" type="Sprite2D" parent="." index="0"]
+position = Vector2(10, 17)
+texture = ExtResource("2_ixuyn")
+
+[node name="Nemico" type="Sprite2D" parent="." index="1"]
+position = Vector2(10, 10)
+texture = ExtResource("3_cm4qh")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbbr4crw68k1y"]
+
+[ext_resource type="PackedScene" uid="uid://dbvlm1lpwqqrm" path="res://PreFabbricati/pavimento.tscn" id="1_4ae0i"]
+
+[node name="Soffitto" instance=ExtResource("1_4ae0i")]
+bordi = ["", "S", "S", "F"]
+
+[node name="Componente" parent="." index="0"]
+position = Vector2(10, 5)

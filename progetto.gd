@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var seed = 17
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +15,8 @@ func _process(delta):
 		var h = old_gen.height
 		old_gen.free()
 		var gen = preload("res://generatore_livello.tscn").instantiate()
+		seed += 1
+		gen.generator_seed = seed 
 		gen.width = w
 		gen.height = h
 		add_child(gen)

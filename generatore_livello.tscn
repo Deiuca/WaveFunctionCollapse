@@ -1,60 +1,44 @@
-[gd_scene load_steps=17 format=3 uid="uid://b8nbp8cghhmwe"]
+[gd_scene load_steps=9 format=3 uid="uid://b8nbp8cghhmwe"]
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
-[ext_resource type="PackedScene" uid="uid://dd5k28g7ir5um" path="res://PreFabbricati/prefab_HiToLo_pavimento.tscn" id="2_4ym07"]
 [ext_resource type="PackedScene" uid="uid://beyml4eop4tsv" path="res://PreFabbricati/aria.tscn" id="2_85f7g"]
-[ext_resource type="PackedScene" uid="uid://b3cmeyukydx0w" path="res://PreFabbricati/prefab_LoToHi_pavimento.tscn" id="3_aswnu"]
-[ext_resource type="PackedScene" uid="uid://dbvlm1lpwqqrm" path="res://PreFabbricati/prefab_pavimento.tscn" id="4_1rx0g"]
-[ext_resource type="PackedScene" uid="uid://bsjkpkwjkjmo5" path="res://PreFabbricati/prefab_pavimento_alto.tscn" id="5_yqlbq"]
-[ext_resource type="PackedScene" uid="uid://dnba4lwdm57b7" path="res://PreFabbricati/prefab_room.tscn" id="6_584et"]
-[ext_resource type="PackedScene" uid="uid://177vvk4l2srr" path="res://PreFabbricati/prefab_room_alta.tscn" id="7_bwj21"]
-[ext_resource type="PackedScene" uid="uid://7sr5c5e3hvgg" path="res://PreFabbricati/prefab_room_alta_entrace_Sx.tscn" id="8_m0idp"]
-[ext_resource type="PackedScene" uid="uid://c3selnh86cp87" path="res://PreFabbricati/prefab_room_entrace.tscn" id="10_k24av"]
-[ext_resource type="PackedScene" uid="uid://cf3rox15w5n6m" path="res://PreFabbricati/pavimento_alto_ostacolo.tscn" id="11_e18ia"]
+[ext_resource type="PackedScene" uid="uid://dbvlm1lpwqqrm" path="res://PreFabbricati/pavimento.tscn" id="2_t0bkr"]
+[ext_resource type="PackedScene" uid="uid://5f064tujluwb" path="res://PreFabbricati/pavimento_nemico.tscn" id="3_l8rym"]
+[ext_resource type="PackedScene" uid="uid://bbbr4crw68k1y" path="res://PreFabbricati/soffitto.tscn" id="7_ss4qb"]
+[ext_resource type="PackedScene" uid="uid://cgs384hk8kl8c" path="res://PreFabbricati/soffitto_entrata.tscn" id="8_n5ruu"]
+[ext_resource type="PackedScene" uid="uid://vj025jub1jx6" path="res://PreFabbricati/soffitto_ostacolo.tscn" id="9_31b2x"]
 [ext_resource type="PackedScene" uid="uid://cyiw0y2r1xbqd" path="res://PreFabbricati/pavimento_ostacolo.tscn" id="12_xe1qp"]
-[ext_resource type="PackedScene" uid="uid://clhe8e8ffqk2" path="res://PreFabbricati/room_nemico.tscn" id="13_f6ta3"]
-[ext_resource type="PackedScene" uid="uid://cpfiucfjmeobd" path="res://PreFabbricati/pavimento_alto_compatibile_room_alta.tscn" id="14_57a6t"]
-[ext_resource type="PackedScene" uid="uid://b0lf6xpy0y8ly" path="res://PreFabbricati/pavimento_compatibile_room.tscn" id="15_xv50a"]
-[ext_resource type="PackedScene" uid="uid://cdf2fexl37vhs" path="res://PreFabbricati/uscita_room_alta_to_pavimento.tscn" id="16_2eccy"]
 
 [node name="Generatore Livello" type="Node2D"]
 script = ExtResource("1_mrvbu")
+width = 10
+height = 10
+generator_seed = 18
 
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
 visible = false
 
-[node name="Pavimento_Alto_Compatibile_Room_Alta" parent="Prefab_Utilizzati" instance=ExtResource("14_57a6t")]
+[node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
+position = Vector2(538, 631)
+bordi = ["", "P", "P", ""]
 
-[node name="Pavimento_Compatibile_Room" parent="Prefab_Utilizzati" instance=ExtResource("15_xv50a")]
-
-[node name="Aria_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
-bordi = ["", "P", "P", "O"]
-
-[node name="HiToLo_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_4ym07")]
-
-[node name="LoToHi_pavimento" parent="Prefab_Utilizzati" instance=ExtResource("3_aswnu")]
-
-[node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("4_1rx0g")]
-
-[node name="Pavimento_Alto" parent="Prefab_Utilizzati" instance=ExtResource("5_yqlbq")]
-
-[node name="Room" parent="Prefab_Utilizzati" instance=ExtResource("6_584et")]
-
-[node name="Room_Alta" parent="Prefab_Utilizzati" instance=ExtResource("7_bwj21")]
-
-[node name="Room_Alta_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("8_m0idp")]
-
-[node name="Room_Entrace" parent="Prefab_Utilizzati" instance=ExtResource("10_k24av")]
-
-[node name="Pavimento_Alto_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("11_e18ia")]
-position = Vector2(11.3928, 13.2712)
+[node name="Pavimento Nemico" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
+position = Vector2(538, 631)
+bordi = ["", "P", "P", ""]
 
 [node name="Pavimento_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("12_xe1qp")]
-position = Vector2(11.3928, 13.2712)
-
-[node name="Room_Nemico" parent="Prefab_Utilizzati" instance=ExtResource("13_f6ta3")]
+position = Vector2(538, 631)
+bordi = ["", "P", "P", ""]
 
 [node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
-bordi = ["", "A", "A", "O"]
+position = Vector2(538, 631)
+bordi = ["O", "PE", "PE", "O"]
 
-[node name="Uscita_Room_Alta_To_povimento" parent="Prefab_Utilizzati" instance=ExtResource("16_2eccy")]
+[node name="Soffitto" parent="Prefab_Utilizzati" instance=ExtResource("7_ss4qb")]
+position = Vector2(538, 631)
+
+[node name="Soffitto_Entrata" parent="Prefab_Utilizzati" instance=ExtResource("8_n5ruu")]
+position = Vector2(538, 631)
+
+[node name="Soffitto_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("9_31b2x")]
+position = Vector2(538, 631)
