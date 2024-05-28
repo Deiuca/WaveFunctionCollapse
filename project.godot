@@ -21,8 +21,8 @@ Init="*res://Scripts/Init.gd"
 
 [display]
 
-window/size/viewport_width=1000
-window/size/viewport_height=700
+window/size/viewport_width=1500
+window/size/viewport_height=1000
 
 [rendering]
 

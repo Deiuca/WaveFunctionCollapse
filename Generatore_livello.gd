@@ -78,10 +78,10 @@ func _ready():
 		if (indx+(self.width)) < self.celle.size() and (indx+(self.width))/self.width == (indx+(self.width+1))/self.width:
 			cella.vicini[7] = self.celle[indx+(self.width+1)]
 	
-	#Collassa at random in pavimento
-	for i in range(0, 8):
-		var randIndx = randomGenerator.randi_range(self.width, (self.width*self.height)-self.width)
-		self.celle[randIndx].set_prefab($Prefab_Utilizzati/Pavimento)
+	##Collassa at random in pavimento
+	#for i in range(0, 8):
+		#var randIndx = randomGenerator.randi_range(self.width, (self.width*self.height)-self.width)
+		#self.celle[randIndx].set_prefab($Prefab_Utilizzati/Pavimento)
 	
 	#Collassa aria per garantire percorso
 	for i in range(self.height-1):
