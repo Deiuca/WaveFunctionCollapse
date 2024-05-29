@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://e1n1ydrjbl5v"]
-
-[ext_resource type="PackedScene" uid="uid://cgs384hk8kl8c" path="res://PreFabbricati/soffitto_entrata.tscn" id="1_3r0q6"]
-
-[node name="Soffitto_Uscita" instance=ExtResource("1_3r0q6")]
-bordi = ["O", "U", "E", "OS"]
-
-[node name="EdgeSxSoffitto" parent="." index="1"]
-flip_h = true

@@ -92,7 +92,7 @@ func trova_cella_meno_entropia():
 	for c in self.celle:
 		if not c.collassata:
 			var entropia = ritorna_compatibili(c).size()
-			if  entropia <= cella_minima[0]:
+			if  entropia < cella_minima[0]:
 				cella_minima = [entropia,c]
 	return cella_minima[1]
 
@@ -167,6 +167,8 @@ func compara_str_by_caratteri(str1: String, str2: String) -> bool:
 	
 	
 func contiene_almeno_un_carattere(una_stringa: String, altra_stringa: String) -> bool:
+	if una_stringa == "" or altra_stringa == "":
+		pass
 	for carattere in una_stringa:
 		if carattere in altra_stringa:
 			return true  
