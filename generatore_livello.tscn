@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8nbp8cghhmwe"]
+[gd_scene load_steps=10 format=3 uid="uid://b8nbp8cghhmwe"]
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
 [ext_resource type="PackedScene" uid="uid://beyml4eop4tsv" path="res://PreFabbricati/aria.tscn" id="2_85f7g"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5f064tujluwb" path="res://PreFabbricati/pavimento_nemico.tscn" id="3_l8rym"]
 [ext_resource type="PackedScene" uid="uid://bbbr4crw68k1y" path="res://PreFabbricati/soffitto.tscn" id="7_ss4qb"]
 [ext_resource type="PackedScene" uid="uid://cgs384hk8kl8c" path="res://PreFabbricati/soffitto_entrata.tscn" id="8_n5ruu"]
+[ext_resource type="PackedScene" uid="uid://e1n1ydrjbl5v" path="res://PreFabbricati/soffitto_uscita.tscn" id="9_5l00n"]
 [ext_resource type="PackedScene" uid="uid://vj025jub1jx6" path="res://PreFabbricati/soffitto_ostacolo.tscn" id="9_31b2x"]
 [ext_resource type="PackedScene" uid="uid://cyiw0y2r1xbqd" path="res://PreFabbricati/pavimento_ostacolo.tscn" id="12_xe1qp"]
 
@@ -21,6 +22,7 @@ visible = false
 [node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
 position = Vector2(538, 631)
 bordi = ["OS", "P", "P", "P"]
+peso = 2
 
 [node name="Pavimento Nemico" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
 position = Vector2(538, 631)
@@ -33,21 +35,23 @@ bordi = ["OS", "P", "P", "P"]
 [node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
 position = Vector2(538, 631)
 bordi = ["OP", "P", "PE", "O"]
-peso = 3
+peso = 2
 
 [node name="Soffitto" parent="Prefab_Utilizzati" instance=ExtResource("7_ss4qb")]
 position = Vector2(538, 631)
-bordi = ["O", "S", "S", "S"]
+bordi = ["O", "RZ", "ZU", "S"]
 peso = 2
 
 [node name="Soffitto_Entrata" parent="Prefab_Utilizzati" instance=ExtResource("8_n5ruu")]
 position = Vector2(538, 631)
-bordi = ["O", "E", "S", "S"]
+bordi = ["O", "E", "R", "SO"]
 
 [node name="Soffitto_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("9_31b2x")]
 position = Vector2(538, 631)
-bordi = ["O", "S", "S", "S"]
+bordi = ["O", "RZ", "ZU", "S"]
 
 [node name="Aria2" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
 position = Vector2(538, 631)
 bordi = ["OP", "PE", "P", "O"]
+
+[node name="Soffitto_Uscita" parent="Prefab_Utilizzati" instance=ExtResource("9_5l00n")]

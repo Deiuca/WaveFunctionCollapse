@@ -24,7 +24,7 @@ func _ready():
 	print("Random Seed: " + str(generator_seed))
 	
 	#Crea Prefab inversi
-	$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Soffitto_Entrata.ritorna_inverso_flip_h("_Dx"))
+	#$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Soffitto_Entrata.ritorna_inverso_flip_h("_Dx"))
 	
 	#Duplica i prefab in base al loro peso
 	for pref in $Prefab_Utilizzati.get_children():
