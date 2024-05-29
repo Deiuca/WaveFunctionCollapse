@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccylitwrr2or5" path="res://Componenti/componente_pavimento.tscn" id="3_gvaik"]
 
 [node name="Entrata" instance=ExtResource("1_khurj")]
-bordi = ["O", "E", "R", "A"]
+bordi = ["O", "E", "R", "A", "O", "O", "A", "A"]
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_nkv8e")]
 position = Vector2(10, 4)

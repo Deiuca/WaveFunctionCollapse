@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://beyml4eop4tsv"]
+[gd_scene load_steps=3 format=3 uid="uid://deo4m0ectyunw"]
 
 [ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_rwck2"]
-[ext_resource type="Texture2D" uid="uid://hcgtli6hqaeg" path="res://Textures/Components/EdgeSx_Soffitto.png" id="2_12n6u"]
+[ext_resource type="PackedScene" uid="uid://4a8gcrdvv8uo" path="res://Componenti/componente_edgeSx_soffitto.tscn" id="2_qtk3c"]
 
 [node name="Aria" instance=ExtResource("1_rwck2")]
-bordi = ["O", "P", "P", "O"]
+rotation = 0.00358201
+scale = Vector2(0.578694, 0.659801)
+bordi = ["A", "UOP", "EOP", "O", "A", "A", "O", "O"]
 
-[node name="EdgeSxSoffitto" type="Sprite2D" parent="." index="0"]
-position = Vector2(10, 10)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_12n6u")
+[node name="Componente" parent="." index="0" instance=ExtResource("2_qtk3c")]
+position = Vector2(17.3359, 13.5861)
+rotation = 3.13047

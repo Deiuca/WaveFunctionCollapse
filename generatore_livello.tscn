@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8nbp8cghhmwe"]
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
-[ext_resource type="PackedScene" uid="uid://beyml4eop4tsv" path="res://PreFabbricati/aria.tscn" id="2_85f7g"]
+[ext_resource type="PackedScene" uid="uid://deo4m0ectyunw" path="res://PreFabbricati/aria.tscn" id="2_85f7g"]
 [ext_resource type="PackedScene" uid="uid://dbvlm1lpwqqrm" path="res://PreFabbricati/pavimento.tscn" id="2_t0bkr"]
 [ext_resource type="PackedScene" uid="uid://bx6507umntm6k" path="res://PreFabbricati/entrata.tscn" id="3_fdm7b"]
 [ext_resource type="PackedScene" uid="uid://5f064tujluwb" path="res://PreFabbricati/pavimento_nemico.tscn" id="3_l8rym"]
@@ -19,13 +19,13 @@ generator_seed = 18
 visible = false
 
 [node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
-position = Vector2(538, 631)
-bordi = ["", "UOP", "EOP", "O"]
-peso = 2
+bordi = ["AV", "UOP", "EOP", "OV", "AV", "AV", "OV", "OV"]
+peso = 3
 
 [node name="Entrata" parent="Prefab_Utilizzati" instance=ExtResource("3_fdm7b")]
 
 [node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
+peso = 2
 
 [node name="Pavimento Nemico" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
 

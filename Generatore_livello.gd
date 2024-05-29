@@ -47,7 +47,7 @@ func _ready():
 	#A ogni istanza nell'array di celle vengono definiti i suoi vicini
 	for indx in range(self.celle.size()):
 		var cella = self.celle[indx]      #Cella corrente
-		#Pattern: Su, Sx, Dx, Giu
+		#Pattern: Su, Sx, Dx, Giu, SuSx, SuDx, GiuDx, GiuSx
 		#Sx
 		if (indx-1) >= 0 and (indx-1)/self.width == indx/self.width:
 			cella.vicini[1] = self.celle[indx-1]
@@ -60,6 +60,19 @@ func _ready():
 		#Giu
 		if (indx+self.width) < self.celle.size():
 			cella.vicini[3] = self.celle[indx+self.width]
+		## Vicinato aggiuntivo
+		#SuSx
+		if(indx-(self.width+1)) >= 0:
+			cella.vicini[4] = self.celle[indx-self.width].vicini[3]
+		#SuDx
+		if ((indx-(self.width-1))/self.width) != indx/self.width:
+			cella.vicini[5] = self.celle[indx-self.width].vicini[4]
+		#GiuSx
+		if (indx+(self.width-1)) < self.celle.size() and ((indx+(self.width-1))/self.width) != indx/self.width:
+			cella.vicini[7] = self.celle[indx+(self.width-1)]
+		#GiuDx
+		if (indx+(self.width)) < self.celle.size() and (indx+(self.width))/self.width == (indx+(self.width+1))/self.width:
+			cella.vicini[6] = self.celle[indx+(self.width+1)]
 	
 	##Collassa aria per garantire percorso
 	#for i in range(self.height-1):
@@ -92,7 +105,7 @@ func trova_cella_meno_entropia():
 	for c in self.celle:
 		if not c.collassata:
 			var entropia = ritorna_compatibili(c).size()
-			if  entropia < cella_minima[0]:
+			if  entropia <= cella_minima[0]:
 				cella_minima = [entropia,c]
 	return cella_minima[1]
 
@@ -167,8 +180,6 @@ func compara_str_by_caratteri(str1: String, str2: String) -> bool:
 	
 	
 func contiene_almeno_un_carattere(una_stringa: String, altra_stringa: String) -> bool:
-	if una_stringa == "" or altra_stringa == "":
-		pass
 	for carattere in una_stringa:
 		if carattere in altra_stringa:
 			return true  

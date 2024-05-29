@@ -1,9 +1,8 @@
 extends Node2D
 class_name Cella
 
-#Pattern: SuSx, Su, SuDx, Sx, Dx, GiuSx, Giu, GiuDx
-#Pattern: Su, Sx, Dx, Giu
-var vicini = [null,null,null,null] 
+#Pattern: Su, Sx, Dx, Giu, SuSx, SuDx, GiuDx, GiuSx
+var vicini = [null,null,null,null,null,null,null,null] 
 
 var collassata = false
 
@@ -34,10 +33,10 @@ func get_bordi()-> Array:
 	return preFab.bordi
 	
 func compatibilita()-> Array:
-	
+	#Pattern: Su, Sx, Dx, Giu, SuSx, SuDx, GiuDx, GiuSx
 	var result = []
 	#Sopra
-	var sopra = self.vicini[0].get_bordi()[3] if self.vicini[0] != null else ""
+	var sopra = self.vicini[0].get_bordi()[3] if self.vicini[0] != null else "#"
 	result.append(sopra)
 	#Sx
 	var sx = self.vicini[1].get_bordi()[2] if self.vicini[1] != null else ""
@@ -48,5 +47,17 @@ func compatibilita()-> Array:
 	#Sotto
 	var sotto = self.vicini[3].get_bordi()[0] if self.vicini[3] != null else ""
 	result.append(sotto)
+	#SuSx
+	var suSx = self.vicini[4].get_bordi()[6] if self.vicini[4] != null else ""
+	result.append(suSx)
+	#SuDx
+	var suDx = self.vicini[5].get_bordi()[7] if self.vicini[5] != null else ""
+	result.append(suDx)
+	#GiuDx
+	var GiuDx = self.vicini[6].get_bordi()[4] if self.vicini[6] != null else ""
+	result.append(GiuDx)
+	#GiuSx
+	var GiuSx = self.vicini[7].get_bordi()[5] if self.vicini[7] != null else ""
+	result.append(GiuSx)
 	
 	return result
