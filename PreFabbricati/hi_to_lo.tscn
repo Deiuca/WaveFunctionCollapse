@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mddxwo1si54j"]
+
+[ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_g6tn8"]
+[ext_resource type="Texture2D" uid="uid://byfv3wr07l04r" path="res://Textures/Components/HiToLoPavimento.png" id="2_thl1i"]
+
+[node name="HiToLo" instance=ExtResource("1_g6tn8")]
+bordi = ["O", "Q", "E", "A", "O", "O", "A", "A"]
+
+[node name="HiToLoPavimento" type="Sprite2D" parent="." index="0"]
+position = Vector2(10, 17)
+texture = ExtResource("2_thl1i")

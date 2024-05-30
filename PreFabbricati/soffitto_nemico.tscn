@@ -8,8 +8,8 @@
 bordi = ["O", "R", "R", "A", "O", "O", "A", "A"]
 
 [node name="Componente" parent="." index="0"]
-position = Vector2(10, 2)
-scale = Vector2(1, 1.16)
+position = Vector2(10, 1)
+scale = Vector2(1, 0.799999)
 
 [node name="Pavimento" parent="." index="1" instance=ExtResource("2_wuvlb")]
 position = Vector2(0, 17)

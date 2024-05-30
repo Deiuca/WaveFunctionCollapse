@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://lk8dx17i2mdb"]
+
+[ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_2ddv3"]
+[ext_resource type="Texture2D" uid="uid://qwxx1aqp1tvt" path="res://Textures/Components/LoToHiPavimento.png" id="2_r75mc"]
+
+[node name="LoToHi" instance=ExtResource("1_2ddv3")]
+bordi = ["O", "U", "Q", "A", "O", "O", "A", "A"]
+
+[node name="LoToHiPavimento" type="Sprite2D" parent="." index="0"]
+position = Vector2(10, 17)
+texture = ExtResource("2_r75mc")

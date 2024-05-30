@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8nbp8cghhmwe"]
+[gd_scene load_steps=14 format=3 uid="uid://b8nbp8cghhmwe"]
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
 [ext_resource type="PackedScene" uid="uid://deo4m0ectyunw" path="res://PreFabbricati/aria.tscn" id="2_85f7g"]
@@ -10,19 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://4j56f5wwbxiy" path="res://PreFabbricati/soffitto_nemico.tscn" id="9_vcj1t"]
 [ext_resource type="PackedScene" uid="uid://e08g8xlyxwfm" path="res://PreFabbricati/pavimento_Edge.tscn" id="10_ca45o"]
 [ext_resource type="PackedScene" uid="uid://o8mk8o3sq8ad" path="res://PreFabbricati/pavimento_Edge_Sx.tscn" id="11_j5rob"]
+[ext_resource type="PackedScene" uid="uid://lk8dx17i2mdb" path="res://PreFabbricati/lo_to_hi.tscn" id="12_sy07l"]
 [ext_resource type="PackedScene" uid="uid://cyiw0y2r1xbqd" path="res://PreFabbricati/pavimento_ostacolo.tscn" id="12_xe1qp"]
+[ext_resource type="PackedScene" uid="uid://mddxwo1si54j" path="res://PreFabbricati/hi_to_lo.tscn" id="13_2jd8r"]
 
 [node name="Generatore Livello" type="Node2D"]
 script = ExtResource("1_mrvbu")
-width = 8
-height = 8
+width = 15
+height = 15
 generator_seed = 18
 
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
 visible = false
 
 [node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
-bordi = ["O", "PUD", "PED", "A", "O", "O", "A", "A"]
 peso = 6
 
 [node name="Pavimento Nemico_N" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
@@ -52,5 +53,13 @@ peso = 2
 peso = 2
 
 [node name="Pavimento Edge" parent="Prefab_Utilizzati" instance=ExtResource("10_ca45o")]
+bordi = ["O", "D", "OE", "A", "O", "O", "A", "A"]
+peso = 4
 
 [node name="Pavimento Edge Sx" parent="Prefab_Utilizzati" instance=ExtResource("11_j5rob")]
+bordi = ["O", "OU", "D", "A", "O", "O", "A", "A"]
+peso = 4
+
+[node name="LoToHi" parent="Prefab_Utilizzati" instance=ExtResource("12_sy07l")]
+
+[node name="HiToLo" parent="Prefab_Utilizzati" instance=ExtResource("13_2jd8r")]
