@@ -5,11 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://ccylitwrr2or5" path="res://Componenti/componente_pavimento.tscn" id="3_t20bu"]
 
 [node name="Uscita" instance=ExtResource("1_k0xl3")]
+scale = Vector2(1.042, 1)
 bordi = ["O", "R", "U", "A", "O", "O", "A", "A"]
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_l2xuy")]
-position = Vector2(10, 5)
-scale = Vector2(1, 1.2)
+position = Vector2(9.59693, 5)
+scale = Vector2(1, 1.28)
 
 [node name="Pavimento" parent="." index="1" instance=ExtResource("3_t20bu")]
 position = Vector2(0, 17)

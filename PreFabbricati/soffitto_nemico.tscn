@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://4j56f5wwbxiy"]
+
+[ext_resource type="PackedScene" uid="uid://dbvlm1lpwqqrm" path="res://PreFabbricati/pavimento.tscn" id="1_ci8bp"]
+[ext_resource type="Texture2D" uid="uid://m4go4dtt23v3" path="res://Textures/Nemico.png" id="2_bcv0i"]
+[ext_resource type="PackedScene" uid="uid://ccylitwrr2or5" path="res://Componenti/componente_pavimento.tscn" id="2_wuvlb"]
+
+[node name="Soffitto Nemico" instance=ExtResource("1_ci8bp")]
+bordi = ["O", "R", "R", "A", "O", "O", "A", "A"]
+
+[node name="Componente" parent="." index="0"]
+position = Vector2(10, 2)
+scale = Vector2(1, 1.16)
+
+[node name="Pavimento" parent="." index="1" instance=ExtResource("2_wuvlb")]
+position = Vector2(0, 17)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+position = Vector2(10, 12)
+texture = ExtResource("2_bcv0i")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8nbp8cghhmwe"]
+[gd_scene load_steps=10 format=3 uid="uid://b8nbp8cghhmwe"]
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
 [ext_resource type="PackedScene" uid="uid://deo4m0ectyunw" path="res://PreFabbricati/aria.tscn" id="2_85f7g"]
@@ -7,43 +7,44 @@
 [ext_resource type="PackedScene" uid="uid://5f064tujluwb" path="res://PreFabbricati/pavimento_nemico.tscn" id="3_l8rym"]
 [ext_resource type="PackedScene" uid="uid://bbbr4crw68k1y" path="res://PreFabbricati/soffitto.tscn" id="7_ss4qb"]
 [ext_resource type="PackedScene" uid="uid://s4mlf860xc8f" path="res://PreFabbricati/uscita.tscn" id="8_5c6nj"]
+[ext_resource type="PackedScene" uid="uid://4j56f5wwbxiy" path="res://PreFabbricati/soffitto_nemico.tscn" id="9_vcj1t"]
 [ext_resource type="PackedScene" uid="uid://cyiw0y2r1xbqd" path="res://PreFabbricati/pavimento_ostacolo.tscn" id="12_xe1qp"]
 
 [node name="Generatore Livello" type="Node2D"]
 script = ExtResource("1_mrvbu")
-width = 15
-height = 15
+width = 8
+height = 8
 generator_seed = 18
 
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
 visible = false
 
-[node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
-peso = 6
-
-[node name="Entrata" parent="Prefab_Utilizzati" instance=ExtResource("3_fdm7b")]
-bordi = ["O", "EPM", "R", "A", "O", "O", "A", "A"]
-
 [node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
-peso = 5
+bordi = ["O", "PU", "PE", "A", "O", "O", "A", "A"]
+peso = 6
 
 [node name="Pavimento Nemico_N" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
 bordi = ["O", "P", "N", "A", "O", "O", "A", "A"]
-peso = 2
 
 [node name="V_Pavimento Nemico" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
 bordi = ["O", "V", "P", "A", "O", "O", "A", "A"]
-peso = 2
 
 [node name="Pavimento_Ostacolo_V" parent="Prefab_Utilizzati" instance=ExtResource("12_xe1qp")]
 bordi = ["O", "P", "V", "A", "O", "O", "A", "A"]
-peso = 3
 
 [node name="N_Pavimento_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("12_xe1qp")]
 bordi = ["O", "N", "P", "A", "O", "O", "A", "A"]
-peso = 3
 
 [node name="Soffitto" parent="Prefab_Utilizzati" instance=ExtResource("7_ss4qb")]
+peso = 2
+
+[node name="Soffitto Nemico" parent="Prefab_Utilizzati" instance=ExtResource("9_vcj1t")]
+
+[node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
+peso = 10
+
+[node name="Entrata" parent="Prefab_Utilizzati" instance=ExtResource("3_fdm7b")]
+peso = 2
 
 [node name="Uscita" parent="Prefab_Utilizzati" instance=ExtResource("8_5c6nj")]
-bordi = ["O", "R", "UPM", "A", "O", "O", "A", "A"]
+peso = 2

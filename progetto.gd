@@ -16,7 +16,7 @@ func _process(delta):
 		old_gen.free()
 		var gen = preload("res://generatore_livello.tscn").instantiate()
 		seed += 1
-		gen.generator_seed = seed 
+		gen.generator_seed = randi_range(0, 100)
 		gen.width = w
 		gen.height = h
 		add_child(gen)

@@ -9,5 +9,6 @@ scale = Vector2(0.578694, 0.659801)
 bordi = ["AV", "UOP", "EOP", "OV", "AV", "AV", "OV", "OV"]
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_qtk3c")]
+visible = false
 position = Vector2(17.3359, 13.5861)
 rotation = 3.13047
