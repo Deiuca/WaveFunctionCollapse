@@ -8,9 +8,9 @@
 bordi = ["O", "P", "P", "A", "O", "O", "A", "A"]
 
 [node name="Pavimento" type="Sprite2D" parent="." index="0"]
-position = Vector2(10, 17)
+position = Vector2(10, 15)
 texture = ExtResource("2_ixuyn")
 
 [node name="Nemico" type="Sprite2D" parent="." index="1"]
-position = Vector2(10, 10)
+position = Vector2(10, 9)
 texture = ExtResource("3_cm4qh")

@@ -7,5 +7,5 @@
 bordi = ["O", "P", "P", "A", "O", "O", "A", "A"]
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_f6n51")]
-position = Vector2(10, 17)
+position = Vector2(10, 15)
 centered = true

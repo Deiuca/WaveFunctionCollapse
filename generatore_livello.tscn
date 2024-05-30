@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8nbp8cghhmwe"]
+[gd_scene load_steps=12 format=3 uid="uid://b8nbp8cghhmwe"]
 
 [ext_resource type="Script" path="res://Generatore_livello.gd" id="1_mrvbu"]
 [ext_resource type="PackedScene" uid="uid://deo4m0ectyunw" path="res://PreFabbricati/aria.tscn" id="2_85f7g"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bbbr4crw68k1y" path="res://PreFabbricati/soffitto.tscn" id="7_ss4qb"]
 [ext_resource type="PackedScene" uid="uid://s4mlf860xc8f" path="res://PreFabbricati/uscita.tscn" id="8_5c6nj"]
 [ext_resource type="PackedScene" uid="uid://4j56f5wwbxiy" path="res://PreFabbricati/soffitto_nemico.tscn" id="9_vcj1t"]
+[ext_resource type="PackedScene" uid="uid://e08g8xlyxwfm" path="res://PreFabbricati/pavimento_Edge.tscn" id="10_ca45o"]
+[ext_resource type="PackedScene" uid="uid://o8mk8o3sq8ad" path="res://PreFabbricati/pavimento_Edge_Sx.tscn" id="11_j5rob"]
 [ext_resource type="PackedScene" uid="uid://cyiw0y2r1xbqd" path="res://PreFabbricati/pavimento_ostacolo.tscn" id="12_xe1qp"]
 
 [node name="Generatore Livello" type="Node2D"]
@@ -20,7 +22,7 @@ generator_seed = 18
 visible = false
 
 [node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
-bordi = ["O", "PU", "PE", "A", "O", "O", "A", "A"]
+bordi = ["O", "PUD", "PED", "A", "O", "O", "A", "A"]
 peso = 6
 
 [node name="Pavimento Nemico_N" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
@@ -48,3 +50,7 @@ peso = 2
 
 [node name="Uscita" parent="Prefab_Utilizzati" instance=ExtResource("8_5c6nj")]
 peso = 2
+
+[node name="Pavimento Edge" parent="Prefab_Utilizzati" instance=ExtResource("10_ca45o")]
+
+[node name="Pavimento Edge Sx" parent="Prefab_Utilizzati" instance=ExtResource("11_j5rob")]
