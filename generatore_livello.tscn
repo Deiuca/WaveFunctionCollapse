@@ -22,23 +22,28 @@ visible = false
 peso = 6
 
 [node name="Entrata" parent="Prefab_Utilizzati" instance=ExtResource("3_fdm7b")]
+bordi = ["O", "EPM", "R", "A", "O", "O", "A", "A"]
 
-[node name="M_Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
-bordi = ["O", "PM", "P", "A", "O", "O", "A", "A"]
+[node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
 peso = 5
 
-[node name="Pavimento_M" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
-bordi = ["O", "P", "PM", "A", "O", "O", "A", "A"]
-peso = 5
-
-[node name="Pavimento Nemico" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
-bordi = ["O", "PM", "PM", "A", "O", "O", "A", "A"]
+[node name="Pavimento Nemico_N" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
+bordi = ["O", "P", "N", "A", "O", "O", "A", "A"]
 peso = 2
 
-[node name="Pavimento_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("12_xe1qp")]
-bordi = ["O", "M", "M", "A", "O", "O", "A", "A"]
+[node name="V_Pavimento Nemico" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
+bordi = ["O", "V", "P", "A", "O", "O", "A", "A"]
+peso = 2
+
+[node name="Pavimento_Ostacolo_V" parent="Prefab_Utilizzati" instance=ExtResource("12_xe1qp")]
+bordi = ["O", "P", "V", "A", "O", "O", "A", "A"]
+peso = 3
+
+[node name="N_Pavimento_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("12_xe1qp")]
+bordi = ["O", "N", "P", "A", "O", "O", "A", "A"]
 peso = 3
 
 [node name="Soffitto" parent="Prefab_Utilizzati" instance=ExtResource("7_ss4qb")]
 
 [node name="Uscita" parent="Prefab_Utilizzati" instance=ExtResource("8_5c6nj")]
+bordi = ["O", "R", "UPM", "A", "O", "O", "A", "A"]

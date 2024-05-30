@@ -83,7 +83,7 @@ func _ready():
 	
 	#Collassa Pavimento
 	for e in range((self.width*self.height)-self.width, (self.width*self.height)):
-		self.celle[e].set_prefab($Prefab_Utilizzati/Pavimento_M)
+		self.celle[e].set_prefab($Prefab_Utilizzati/Pavimento)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var counter = 0
