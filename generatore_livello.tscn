@@ -11,8 +11,8 @@
 
 [node name="Generatore Livello" type="Node2D"]
 script = ExtResource("1_mrvbu")
-width = 10
-height = 10
+width = 15
+height = 15
 generator_seed = 18
 
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
@@ -23,13 +23,17 @@ peso = 6
 
 [node name="Entrata" parent="Prefab_Utilizzati" instance=ExtResource("3_fdm7b")]
 
-[node name="Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
-bordi = ["O", "PM", "PM", "A", "O", "O", "A", "A"]
+[node name="M_Pavimento" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
+bordi = ["O", "PM", "P", "A", "O", "O", "A", "A"]
+peso = 5
+
+[node name="Pavimento_M" parent="Prefab_Utilizzati" instance=ExtResource("2_t0bkr")]
+bordi = ["O", "P", "PM", "A", "O", "O", "A", "A"]
 peso = 5
 
 [node name="Pavimento Nemico" parent="Prefab_Utilizzati" instance=ExtResource("3_l8rym")]
-bordi = ["O", "M", "M", "A", "O", "O", "A", "A"]
-peso = 3
+bordi = ["O", "PM", "PM", "A", "O", "O", "A", "A"]
+peso = 2
 
 [node name="Pavimento_Ostacolo" parent="Prefab_Utilizzati" instance=ExtResource("12_xe1qp")]
 bordi = ["O", "M", "M", "A", "O", "O", "A", "A"]

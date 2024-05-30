@@ -63,10 +63,10 @@ func _ready():
 		## Vicinato aggiuntivo
 		#SuSx
 		if(indx-(self.width+1)) >= 0:
-			cella.vicini[4] = self.celle[indx-self.width].vicini[3]
+			cella.vicini[4] = self.celle[indx-self.width].vicini[2]
 		#SuDx
 		if ((indx-(self.width-1))/self.width) != indx/self.width:
-			cella.vicini[5] = self.celle[indx-self.width].vicini[4]
+			cella.vicini[5] = self.celle[indx-self.width].vicini[1]
 		#GiuSx
 		if (indx+(self.width-1)) < self.celle.size() and ((indx+(self.width-1))/self.width) != indx/self.width:
 			cella.vicini[7] = self.celle[indx+(self.width-1)]
@@ -83,7 +83,7 @@ func _ready():
 	
 	#Collassa Pavimento
 	for e in range((self.width*self.height)-self.width, (self.width*self.height)):
-		self.celle[e].set_prefab($Prefab_Utilizzati/Pavimento)
+		self.celle[e].set_prefab($Prefab_Utilizzati/Pavimento_M)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var counter = 0

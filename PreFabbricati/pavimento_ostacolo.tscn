@@ -6,5 +6,5 @@
 [node name="Pavimento_Ostacolo" instance=ExtResource("1_s8esg")]
 
 [node name="Ostacolo" type="Sprite2D" parent="." index="1"]
-position = Vector2(10, 15)
+position = Vector2(10, 13)
 texture = ExtResource("2_rc6qu")
