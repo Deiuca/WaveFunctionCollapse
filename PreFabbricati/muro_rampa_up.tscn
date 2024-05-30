@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp5i2kof0xkdl"]
+
+[ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_etbpl"]
+[ext_resource type="Texture2D" uid="uid://dvbd7cf23rdgp" path="res://Textures/Prefab/muro_rampa_up.png" id="2_vs8ch"]
+
+[node name="Muro_Rampa_Up" instance=ExtResource("1_etbpl")]
+bordi = ["O", "I", "B", "B", "", "", "", ""]
+
+[node name="MuroRampaUp" type="Sprite2D" parent="." index="0"]
+position = Vector2(10, 10)
+texture = ExtResource("2_vs8ch")

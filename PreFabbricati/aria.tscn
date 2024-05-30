@@ -6,7 +6,7 @@
 [node name="Aria" instance=ExtResource("1_rwck2")]
 rotation = 0.00358201
 scale = Vector2(0.578694, 0.659801)
-bordi = ["AV", "UOP", "EOP", "OV", "AV", "AV", "OV", "OV"]
+bordi = ["AV", "UOPI", "EOPI", "OVB", "AVB", "AVB", "OV", "OV"]
 
 [node name="Componente" parent="." index="0" instance=ExtResource("2_qtk3c")]
 position = Vector2(17.3359, 13.5861)

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c16chti58xtan"]
+
+[ext_resource type="PackedScene" uid="uid://chl77nbbcyyb4" path="res://prefab.tscn" id="1_golwg"]
+[ext_resource type="Texture2D" uid="uid://b87wougjr7osv" path="res://Textures/Prefab/muro.png" id="2_n1i8n"]
+
+[node name="Muro" instance=ExtResource("1_golwg")]
+bordi = ["O", "B", "B", "B", "O", "O", "B", "B"]
+
+[node name="Muro" type="Sprite2D" parent="." index="0"]
+position = Vector2(10, 9.5)
+texture = ExtResource("2_n1i8n")
