@@ -39,6 +39,7 @@ func _ready():
 	for ih in range(self.height):
 		for iw in range(self.width):
 			var istanza = Cella.new()
+			istanza.debug_numero = (ih+1)*(iw+1)
 			istanza.position = Vector2(iw*dim_txture.x*cell_scale.x, ih*dim_txture.y*cell_scale.y)
 			istanza.scale = cell_scale
 			self.celle.append(istanza)
@@ -97,6 +98,7 @@ func _process(delta):
 			#var test = randomGenerator.randi_range(0, compatibili.size()-1)
 			#cella_da_collassare.set_prefab(compatibili[test])
 		#cella_da_collassare = trova_cella_meno_entropia()
+		
 		var test = randomGenerator.randi_range(0, compatibili.size()-1)
 		cella_da_collassare.set_prefab(compatibili[test])
 		cella_da_collassare = trova_cella_meno_entropia()
@@ -116,9 +118,10 @@ func ritorna_compatibili(cella : Cella) -> Array:
 		var compatibili = []
 		for pref in $Prefab_Utilizzati.get_children():
 			var eGiusto = true
+			var testbordi = pref.bordi
 			for i in range(pref.bordi.size()):
-				if compatibilita[i] != "" and pref.bordi[i] != "":
-					eGiusto = eGiusto && (contiene_almeno_un_carattere(pref.bordi[i], compatibilita[i]))
+				if (compatibilita[i] != "" and pref.bordi[i] != ""):
+					eGiusto = eGiusto && (contiene_almeno_un_carattere(compatibilita[i], pref.bordi[i]))
 					if !eGiusto:
 						break
 			if eGiusto:

@@ -47,6 +47,7 @@ peso = 2
 [node name="Soffitto Nemico" parent="Prefab_Utilizzati" instance=ExtResource("9_vcj1t")]
 
 [node name="Aria" parent="Prefab_Utilizzati" instance=ExtResource("2_85f7g")]
+bordi = ["AV", "UOPI", "EOPI", "OVB", "AV", "AV", "OVB", "OVB"]
 peso = 10
 
 [node name="Entrata" parent="Prefab_Utilizzati" instance=ExtResource("3_fdm7b")]
@@ -68,10 +69,18 @@ peso = 4
 [node name="HiToLo" parent="Prefab_Utilizzati" instance=ExtResource("13_2jd8r")]
 
 [node name="Muro" parent="Prefab_Utilizzati" instance=ExtResource("14_r1go5")]
+bordi = ["O", "B", "X", "B", "O", "O", "B", "B"]
+peso = 2
+
+[node name="Muro2" parent="Prefab_Utilizzati" instance=ExtResource("14_r1go5")]
+bordi = ["O", "X", "B", "B", "O", "O", "B", "B"]
+peso = 2
 
 [node name="Bedrock" parent="Prefab_Utilizzati" instance=ExtResource("14_r1go5")]
-bordi = ["B", "B", "B", "B", "", "", "", ""]
+bordi = ["B", "B", "B", "B", "B", "B", "B", "B"]
 
 [node name="Muro_rampa_Down" parent="Prefab_Utilizzati" instance=ExtResource("15_hw5ih")]
+bordi = ["O", "X", "I", "B", "O", "O", "B", "B"]
 
 [node name="Muro_Rampa_Up" parent="Prefab_Utilizzati" instance=ExtResource("16_4suss")]
+bordi = ["O", "I", "B", "B", "O", "O", "B", "B"]

@@ -9,6 +9,7 @@ var collassata = false
 var preFab : PreFab = preload("res://prefab.tscn").instantiate()
 
 var debug_nome = self.preFab.name
+var debug_numero = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
