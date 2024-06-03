@@ -7,7 +7,7 @@
 [node name="Entrata" instance=ExtResource("1_khurj")]
 bordi = ["O", "E", "R", "A", "O", "O", "A", "A"]
 
-[node name="Componente" parent="." index="0" instance=ExtResource("2_nkv8e")]
+[node name="Soffitto" parent="." index="0" instance=ExtResource("2_nkv8e")]
 position = Vector2(10, 5)
 scale = Vector2(1, 1.37779)
 
