@@ -19,9 +19,8 @@
 
 [node name="Generatore Livello" type="Node2D"]
 script = ExtResource("1_mrvbu")
-width = 15
-height = 15
-generator_seed = 18
+width = 10
+height = 10
 
 [node name="Prefab_Utilizzati" type="Node2D" parent="."]
 visible = false

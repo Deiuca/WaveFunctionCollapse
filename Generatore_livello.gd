@@ -75,13 +75,6 @@ func _ready():
 		if (indx+(self.width)) < self.celle.size() and (indx+(self.width))/self.width == (indx+(self.width+1))/self.width:
 			cella.vicini[6] = self.celle[indx+(self.width+1)]
 	
-	##Collassa aria per garantire percorso
-	#for i in range(self.height-1):
-		#var randIndx = (i*self.width)+randomGenerator.randi_range(0,self.width-1)
-		#self.celle[randIndx].set_prefab($Prefab_Utilizzati/Aria)
-		#randIndx = (i*self.width)+randomGenerator.randi_range(0,self.width-1)
-		#self.celle[randIndx].set_prefab($Prefab_Utilizzati/Aria)
-	
 	#Collassa Pavimento
 	for e in range((self.width*self.height)-self.width, (self.width*self.height)):
 		self.celle[e].set_prefab($Prefab_Utilizzati/Bedrock)
@@ -91,16 +84,10 @@ func _ready():
 var counter = 0
 var iterazioni = 1
 func _process(delta):
-	var cella_da_collassare = self.celle[0]
+	var cella_da_collassare = trova_cella_meno_entropia()
 	while cella_da_collassare != null:
 		var compatibili = ritorna_compatibili(cella_da_collassare)
-		#if not compatibili.is_empty():
-			#var test = randomGenerator.randi_range(0, compatibili.size()-1)
-			#cella_da_collassare.set_prefab(compatibili[test])
-		#cella_da_collassare = trova_cella_meno_entropia()
-		
-		var test = randomGenerator.randi_range(0, compatibili.size()-1)
-		cella_da_collassare.set_prefab(compatibili[test])
+		cella_da_collassare.set_prefab(compatibili[ randomGenerator.randi_range(0, compatibili.size()-1)])
 		cella_da_collassare = trova_cella_meno_entropia()
 
 func trova_cella_meno_entropia():
@@ -128,61 +115,8 @@ func ritorna_compatibili(cella : Cella) -> Array:
 				compatibili.append(pref)
 		return compatibili if not compatibili.is_empty() else [cella.preFab]
 	return [cella.preFab]
-	
-
-func random_prefab_on_priorita(array : Array):
-	# Verifichiamo se l'array è vuoto
-	if array.size() == 0:
-		return null
-	
-	# Creiamo un array per le probabilità cumulate
-	var probabilita_comulata = []
-	var priorita_totale = 0.0
-	
-	# Calcoliamo la somma totale delle priorità
-	for pref in array:
-		priorita_totale += pref.priorita
-		probabilita_comulata.append(priorita_totale)
-	
-	# Generiamo un numero casuale tra 0 e la somma totale delle priorità
-	var random_number = self.randomGenerator.randf() * priorita_totale
-	
-	# Selezioniamo l'oggetto basato sul numero casuale
-	for i in range(probabilita_comulata.size()):
-		if random_number < probabilita_comulata[i]:
-			return array[i]
-	
-	# Se non abbiamo trovato un oggetto, restituiamo l'ultimo
-	return array[-1]
 
 #Funzioni Helpers:
-#TODO depleted
-func compara_str_by_caratteri(str1: String, str2: String) -> bool:
-	if str1.length() != str2.length():
-		return false
-	
-	var char_count = {}
-	
-	# Conta i caratteri nella prima stringa
-	for char in str1:
-		if char in char_count:
-			char_count[char] += 1
-		else:
-			char_count[char] = 1
-	
-	# Verifica i caratteri nella seconda stringa
-	for char in str2:
-		if char in char_count:
-			char_count[char] -= 1
-			if char_count[char] < 0:
-				return false
-		else:
-			return false
-				
-	# Se tutti i conteggi sono zero, le stringhe sono composte dagli stessi caratteri
-	return true
-	
-	
 func contiene_almeno_un_carattere(una_stringa: String, altra_stringa: String) -> bool:
 	for carattere in una_stringa:
 		if carattere in altra_stringa:
