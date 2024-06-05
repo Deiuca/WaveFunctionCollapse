@@ -81,8 +81,6 @@ func _ready():
 	$Prefab_Utilizzati/Bedrock.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-var counter = 0
-var iterazioni = 1
 func _process(delta):
 	var cella_da_collassare = trova_cella_meno_entropia()
 	while cella_da_collassare != null:
