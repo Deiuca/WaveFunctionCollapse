@@ -13,6 +13,7 @@ func _ready():
 func _process(delta):
 	pass
 
+#Ritorna inveso, con texture e bordi specchiati
 func ritorna_inverso_flip_h(nameAdd = "_Flip") ->PreFab:
 	var copia = self.duplicate()
 	copia.flip_h = true

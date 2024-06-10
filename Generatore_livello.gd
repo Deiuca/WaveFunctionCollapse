@@ -21,7 +21,7 @@ func _ready():
 	self.randomGenerator.seed = self.generator_seed
 	
 	#DEBUG
-	print("Random Seed: " + str(generator_seed))
+	#print("Random Seed: " + str(generator_seed))
 	
 	#Crea Prefab inversi
 	#$Prefab_Utilizzati.add_child($Prefab_Utilizzati/Soffitto_Entrata.ritorna_inverso_flip_h("_Dx"))
@@ -82,11 +82,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var start = Time.get_ticks_msec()
 	var cella_da_collassare = trova_cella_meno_entropia()
 	while cella_da_collassare != null:
 		var compatibili = ritorna_compatibili(cella_da_collassare)
 		cella_da_collassare.set_prefab(compatibili[ randomGenerator.randi_range(0, compatibili.size()-1)])
 		cella_da_collassare = trova_cella_meno_entropia()
+	var passato = Time.get_ticks_msec() - start
+	if passato > 1:
+		print(passato)
 
 func trova_cella_meno_entropia():
 	var cella_minima = [$Prefab_Utilizzati.get_child_count(), null]
@@ -101,6 +105,7 @@ func ritorna_compatibili(cella : Cella) -> Array:
 	if not cella.collassata:
 		var compatibilita = cella.compatibilita()
 		var compatibili = []
+		#Confronta ogni bordo di ogni prefab con la compatilità della cella
 		for pref in $Prefab_Utilizzati.get_children():
 			var eGiusto = true
 			var testbordi = pref.bordi
